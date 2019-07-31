@@ -42,4 +42,4 @@ class OddsSpider(scrapy.Spider):
         items[""]
         yield items
 
-req = SplashRequest('https://www.oddsportal.com/soccer/africa/africa-cup-of-nations-2015/ivory-coast-ghana-W21pVo48/',args={'wait': 3} , )
+#req = SplashRequest('https://www.oddsportal.com/soccer/africa/africa-cup-of-nations-2015/ivory-coast-ghana-W21pVo48/',args={'wait': 3} , )

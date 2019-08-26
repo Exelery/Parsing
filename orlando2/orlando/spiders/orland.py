@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 import scrapy
-#from ..items import OrlandoItem
-import json
 from ..items import OrlandoItem
 from unicodedata import normalize
 
@@ -27,9 +25,7 @@ class OrlandSpider(scrapy.Spider):
             items['Команда'][name] = {}
             items['Команда'][name]["Фото"] = response.urljoin(member.css("img::attr(src)").get())
             items['Команда'][name]["описание"] = " ".join(member.css("h6::text").extract())
-            
-        #result = json.dumps(items, ensure_ascii=False)
-        #print(result)
+           
         return items                                                                                    
         
 

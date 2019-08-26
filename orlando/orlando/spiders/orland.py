@@ -18,11 +18,12 @@ class OrlandSpider(scrapy.Spider):
             title = " ".join(space.css("h4::text").extract())
             self.items[title] = space.css("span.counter::text").get()
         
+         self.items['Команда'] = {}
         for member in response.css("div.col-md-4.col-sm-4.col-xs-12"):
             name = member.css("h4::text").get()
-            self.items[name] = {}
-            self.items[name]["photo"] = response.urljoin(member.css("img::attr(src)").get())
-            self.items[name]["description"] = " ".join(member.css("h6::text").extract())
+            self.items['Команда'][name] = {}
+            self.items['Команда'][name]["Фото"] = response.urljoin(member.css("img::attr(src)").get())
+            self.items['Команда'][name]["описание"] = " ".join(member.css("h6::text").extract())
                                                                                             
                                                                                             
         result = json.dumps(self.items, ensure_ascii=False)

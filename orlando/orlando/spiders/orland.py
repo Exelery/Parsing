@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import json
-from scrapy.http import FormRequest
 
 
 items = {}
